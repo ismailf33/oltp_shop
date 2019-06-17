@@ -1,7 +1,19 @@
+<?php
+include "../classes/Adminlogin.php";
+$al = new Adminlogin();
+?>
+<?php
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	$adminuser = $_POST['adminUser'];
+	$adminpass = $_POST['adminPass'];
+	$p_info = $al->adminLogin($adminuser,$adminpass);
+}
+?>
+
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<title>Login</title>
+<title>Admin Login</title>
     <link rel="stylesheet" type="text/css" href="css/stylelogin.css" media="screen" />
 </head>
 <body>
@@ -9,11 +21,16 @@
 	<section id="content">
 		<form action="" method="post">
 			<h1>Admin Login</h1>
+	<?php
+	if(isset($loginmsg)){
+		echo $loginmsg;
+	}
+	?>
 			<div>
-				<input type="text" placeholder="Username" required="" name="username"/>
+				<input type="text" placeholder="Username" required="" name="adminUser"/>
 			</div>
 			<div>
-				<input type="password" placeholder="Password" required="" name="password"/>
+				<input type="password" placeholder="Password" required="" name="adminPass"/>
 			</div>
 			<div>
 				<input type="submit" value="Log in" />
