@@ -27,8 +27,8 @@ if(empty($adminuser) || empty($adminuser)){
      $value = $result->fetch_assoc(); 
      Session::set("adminlogin" , true);
      Session::set("adminId" , $value['adminId']);
-     Session::set("adminUser" , $value['adminUser']);
-     Session::set("adminUser" , $value['adminName']);
+     Session::set("adminUser" , $value['adminUser']); //correction adminUser to adminName
+     Session::set("adminName" , $value['adminName']);
      header("Location:dashbord.php");       
     }else{
         $loginmsg = "Username or password not match";
