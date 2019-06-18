@@ -3,10 +3,10 @@ include "../classes/Adminlogin.php";
 $al = new Adminlogin();
 ?>
 <?php
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$adminuser = $_POST['adminUser'];
 	$adminpass = $_POST['adminPass'];
-	$p_info = $al->adminLogin($adminuser,$adminpass);
+	$p_info = $al->adminLogin($adminuser, $adminpass);
 }
 ?>
 
@@ -21,11 +21,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	<section id="content">
 		<form action="" method="post">
 			<h1>Admin Login</h1>
-	<?php
-	if(isset($loginmsg)){
-		echo $loginmsg;
-	}
-	?>
+<?php
+if (isset($loginmsg)) {
+	echo $loginmsg;
+}
+?>
 			<div>
 				<input type="text" placeholder="Username" required="" name="adminUser"/>
 			</div>
