@@ -32,5 +32,13 @@ public function Category_list(){
         $result = $this->db->select($query); 
         return $result;         
     }
+public function Category_del($delid){
+    $query  = "DELETE FROM tbl_category WHERE catId='$delid' ";
+    $result = $this->db->delete($query); 
+    if($result){
+        $delmsg = "Category deleted successfully .";
+        return $delmsg;
+    }        
+}
 //end brackets  
 }
