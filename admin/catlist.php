@@ -12,11 +12,12 @@ if(isset($_GET['catdel'])){
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Category List</h2>
+                <h2>Category List</h2>				
 				<?php 
 				if(isset($delid)){
 					echo $delid;
 				}?>
+				
                 <div class="block">        
                     <table class="data display datatable" id="example">
 					<thead>
