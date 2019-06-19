@@ -19,7 +19,7 @@
 					<?php
 					$result = $ct->Category_list();
 					if($result){
-						$i;
+						$i = 0;
 						while($print = $result->fetch_assoc()){
 						$i++ ; 
 						?>	
