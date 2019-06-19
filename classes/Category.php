@@ -27,5 +27,10 @@ if($catName == ""){
     }    
     }
 }
+public function Category_list(){
+        $query  = "SELECT * FROM tbl_category";
+        $result = $this->db->select($query); 
+        return $result;         
+    }
 //end brackets  
 }
