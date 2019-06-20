@@ -24,7 +24,7 @@ if($catName == ""){
     }else{
     $catadd_msg = "Category Not Inserted .";
     return $catadd_msg;   
-    }    
+            }    
+        }
     }
-}
 }
