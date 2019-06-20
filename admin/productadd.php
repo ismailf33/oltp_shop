@@ -1,5 +1,9 @@
 ﻿<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
+<?php 
+include '../classes/Brand.php';
+include '../classes/Category.php';
+?>
 
 <div class="grid_10">
     <div class="box round first grid">
@@ -20,12 +24,17 @@
                     <td>
                         <label>Category</label>
                     </td>
-                    <td>
+                    <td>                    
                         <select id="select" name="catId">
-                            <option>Select Category</option>
-                            <option value="1">Category One</option>
-                            <option value="2">Category Two</option>
-                            <option value="3">Category Three</option>
+                        <option>Select Category</option>
+                        <?php
+                    $ct = new Category();
+                    $value = $ct->Category_list();
+                    if($value){
+                        while($print = $value->fetch_assoc()){
+                            ?>
+                            <option  value="<?php echo $print['catId']?>"><?php echo $print['catName']?></option>
+                    <?php }} ?>    
                         </select>
                     </td>
                 </tr>
@@ -36,9 +45,14 @@
                     <td>
                         <select id="select" name="brandId">
                             <option>Select Brand</option>
-                            <option value="1">Brand One</option>
-                            <option value="2">Brand Two</option>
-                            <option value="3">Brand Three</option>
+                            <?php
+                    $br = new Brand();
+                    $value = $br->Brand_list();
+                    if($value){
+                        while($print = $value->fetch_assoc()){
+                            ?>
+                            <option value="<?php echo $print['brandId']?>"><?php echo $print['brandName']?></option>
+                    <?php }} ?>                            
                         </select>
                     </td>
                 </tr>
