@@ -38,7 +38,7 @@ if(isset($_GET['catdel'])){
 						<tr class="odd gradeX">
 							<td><?php echo $i;?></td>
 							<td><?php echo $print['catName'];?></td>
-							<td><a href="?catedit=<?php echo $print['catId'];?>">Edit</a> || <a href="?catdel=<?php echo $print['catId'];?>">Delete</a></td>
+							<td><a href="catedit.php?catedit=<?php echo $print['catId'];?>">Edit</a> || <a href="?catdel=<?php echo $print['catId'];?>">Delete</a></td>
 						</tr>
 				<?php }} ?>					
 					</tbody>

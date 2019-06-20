@@ -40,5 +40,14 @@ public function Category_del($delid){
         return $delmsg;
     }        
 }
+public function Category_edit($editid){
+    $query  = "SELECT * FROM tbl_category WHERE catId='$editid'";
+    $result = $this->db->select($query); 
+    return $result;         
+}
+
+
+
+
 //end brackets  
 }
