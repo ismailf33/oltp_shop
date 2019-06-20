@@ -1,5 +1,6 @@
 ﻿<?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
+
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Add New Product</h2>
@@ -12,7 +13,7 @@
                         <label>Name</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Enter Product Name..." class="medium" />
+                        <input type="text" placeholder="Enter Product Name..." class="medium" name="productName"/>
                     </td>
                 </tr>
 				<tr>
@@ -20,7 +21,7 @@
                         <label>Category</label>
                     </td>
                     <td>
-                        <select id="select" name="select">
+                        <select id="select" name="catId">
                             <option>Select Category</option>
                             <option value="1">Category One</option>
                             <option value="2">Category Two</option>
@@ -33,7 +34,7 @@
                         <label>Brand</label>
                     </td>
                     <td>
-                        <select id="select" name="select">
+                        <select id="select" name="brandId">
                             <option>Select Brand</option>
                             <option value="1">Brand One</option>
                             <option value="2">Brand Two</option>
@@ -47,7 +48,7 @@
                         <label>Description</label>
                     </td>
                     <td>
-                        <textarea class="tinymce"></textarea>
+                        <textarea class="tinymce" name="body"></textarea>
                     </td>
                 </tr>
 				<tr>
@@ -55,7 +56,7 @@
                         <label>Price</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Enter Price..." class="medium" />
+                        <input type="text" placeholder="Enter Price..." class="medium" name="price"/>
                     </td>
                 </tr>
             
@@ -64,7 +65,7 @@
                         <label>Upload Image</label>
                     </td>
                     <td>
-                        <input type="file" />
+                        <input type="file" name="image" />
                     </td>
                 </tr>
 				
@@ -73,7 +74,7 @@
                         <label>Product Type</label>
                     </td>
                     <td>
-                        <select id="select" name="select">
+                        <select id="select" name="type">
                             <option>Select Type</option>
                             <option value="1">Featured</option>
                             <option value="2">Non-Featured</option>
