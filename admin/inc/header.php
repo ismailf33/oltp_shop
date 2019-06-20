@@ -38,14 +38,6 @@ Session::checkSession();
 		    setSidebarHeight();
         });
     </script>
-<style>
-#error{
-    color:red;
-}
-#success{
-    color:green;
-}
-</style>
 </head>
 <body>
     <div class="container_12">

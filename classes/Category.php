@@ -19,7 +19,7 @@ if($catName == ""){
     $query  = "INSERT INTO tbl_category(catName) Values('$catName')";
     $result = $this->db->insert($query); 
     if($result){
-    $catadd_msg = "Category Inserted Successfully .";
+    $catadd_msg = "<span class='success'>Category Inserted Successfully .</span>";
     return $catadd_msg;
     }else{
     $catadd_msg = "Category Not Inserted .";
@@ -36,7 +36,7 @@ public function Category_del($delid){
     $query  = "DELETE FROM tbl_category WHERE catId='$delid' ";
     $result = $this->db->delete($query); 
     if($result){
-        $delmsg = "Category deleted successfully .";
+        $delmsg = "<span class='success'>Category Deleted successfully !</span>";
         return $delmsg;
     }        
 }
