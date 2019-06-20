@@ -11,23 +11,23 @@ if(!isset($_GET['catedit']) || $_GET['catedit']==NULL){
     echo "<script>window.location = 'catlist.php'; </script>";
 }else{
 	$editid = $_GET['catedit'];
-	$editid = $ct->Category_edit($editid);
 }
 ?>
 <?php
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     $catName =$_POST['catName'];
-    $ctnpass = $ct->addCategory($catName);
+    $ctnup = $ct->update_Category($catName ,$editid);
 }
 ?>
         <div class="grid_10">
             <div class="box round first grid">
                 <h2>Edit Category</h2>
             <?php
-            if(isset($ctnpass)){
-                echo $ctnpass;
-            }?>
+            if(isset($ctnup)){
+                echo $ctnup;
+            }?>           
              <?php
+             $editid = $ct->Category_edit($editid);
             if(isset($editid)){
                while($val = $editid->fetch_assoc() ){ ?>
                <div class="block copyblock"> 
