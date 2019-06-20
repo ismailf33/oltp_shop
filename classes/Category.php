@@ -27,5 +27,5 @@ if($catName == ""){
     }    
     }
 }
-//end brackets  
+ 
 }
