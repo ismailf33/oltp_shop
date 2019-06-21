@@ -44,7 +44,7 @@ $pr = new Product();
 					<td><img src="<?php echo $print['image']?>" height="40px" width="40px"></td>
 					<td><?php 
 					if($print['type']==0){
-						echo "Featured"}?></td>
+						echo "Featured";}?></td>
 					<td><a href="<?php echo $print['productId']?>">Edit</a> || <a href="<?php echo $print['productId']?>">Delete</a></td>
 				</tr>
 			<?php }} ?>				
