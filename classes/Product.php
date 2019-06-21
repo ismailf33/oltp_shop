@@ -57,5 +57,8 @@ else{
     }    
     }
 }
+public function product_list(){
+$query
+}
 //end brackets  
 }
