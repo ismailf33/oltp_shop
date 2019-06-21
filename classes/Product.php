@@ -77,8 +77,16 @@ $result = $this->db->select($query);
 return $result;
 }
 //Delete product list
-public function del_product($pro_id){   
-    $query = "DELETE FROM tbl_product WHERE productId='$pro_id'";
+public function del_product($id){  
+    $query = "SELECT * FROM tbl_product WHERE productId='$id'";
+    $data = $this->db->select($query);
+    if($data){
+        while($img = $data->fetch_assoc()){
+            $link = $img['image'];
+            unlink($link );
+        }
+    }
+    $query = "DELETE FROM tbl_product WHERE productId='$id'";
     $result = $this->db->delete($query);
     if($result){
         $msg ="Product deleted successfully !";
