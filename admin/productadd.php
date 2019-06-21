@@ -14,7 +14,12 @@ $pro_add = $pro->add_Product($_POST , $_FILES);
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Add New Product</h2>
-        <div class="block">               
+        <div class="block"> 
+            <?php
+            if(isset($pro_add)){
+                echo $pro_add;
+            }
+            ?>              
          <form action="" method="post" enctype="multipart/form-data">
             <table class="form">
                
