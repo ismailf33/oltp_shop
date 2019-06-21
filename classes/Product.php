@@ -57,7 +57,7 @@ else{
     }    
     }
 }
-//Archive product_list
+//Archive product list
 public function product_list(){
 /*--INNER JOIN
 $query = "SELECT  tbl_product.*, tbl_category.catName, tbl_brand.brandName
@@ -76,5 +76,17 @@ ORDER BY p.productId DESC ";
 $result = $this->db->select($query);
 return $result;
 }
+//Delete product list
+public function del_product($pro_id){   
+    $query = "DELETE FROM tbl_product WHERE productId='$pro_id'";
+    $result = $this->db->delete($query);
+    if($result){
+        $msg ="Product deleted successfully !";
+        return $msg;
+    }else{
+        $msg ="Product Not deleted";
+        return $msg;
+    }
+} 
 //end brackets  
 }

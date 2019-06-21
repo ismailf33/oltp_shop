@@ -8,9 +8,19 @@ include '../classes/Product.php';
 $fm = new Format();
 $pr = new Product();
 ?>
+<?php
+if(isset($_GET['proid'])){	
+		$id = preg_replace('/[^-a-zA-Z0-9_]/','', $_GET['proid']) ;
+		$del_pro = $pr->del_product($id);
+	}
+?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Post List</h2>
+		<h2>Post List</h2>
+		<?php
+		if(isset($del_pro)){
+			echo $del_pro;
+		}?>
         <div class="block">  
             <table class="data display datatable" id="example">
 			<thead>
@@ -25,7 +35,7 @@ $pr = new Product();
 					<th>Type</th>
 					<th>Aciton</th>
 				</tr>
-			</thead>
+			</thead>	
 			<tbody>
 			<?php
 			$pr_list = $pr->product_list();
@@ -47,7 +57,7 @@ $pr = new Product();
 						echo "Featured";
 						}else{
 							echo "General";}?></td>
-					<td><a href="<?php echo $print['productId']?>">Edit</a> || <a href="<?php echo $print['productId']?>">Delete</a></td>
+					<td><a href="<?php echo $print['productId']?>">Edit</a> || <a href="?proid=<?php echo $print['productId']?>">Delete</a></td>
 				</tr>
 			<?php }} ?>				
 			</tbody>
