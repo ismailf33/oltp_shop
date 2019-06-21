@@ -52,7 +52,11 @@ $pro_add = $pro->add_Product($_POST , $_FILES);
                     if($value){
                         while($print = $value->fetch_assoc()){
                             ?>
-                            <option  value="<?php echo $print['catId']?>"><?php echo $print['catName']?></option>
+                            <option 
+                             <?php
+                             if($val['catId'] == $print['catId']){ ?>
+                                 selected = "selected";                                
+                             <?php } ?> value="<?php echo $print['catId']?>"><?php echo $print['catName']?></option>
                     <?php }} ?>    
                         </select>
                     </td>
@@ -70,7 +74,11 @@ $pro_add = $pro->add_Product($_POST , $_FILES);
                     if($value){
                         while($print = $value->fetch_assoc()){
                             ?>
-                            <option value="<?php echo $print['brandId']?>"><?php echo $print['brandName']?></option>
+                            <option
+                            <?php 
+                            if($val['brandId'] == $print['brandId']){ ?>
+                                selected = "selected"
+                          <?php  } ?> value="<?php echo $print['brandId']?>"><?php echo $print['brandName']?></option>
                     <?php }} ?>                            
                         </select>
                     </td>
@@ -111,8 +119,14 @@ $pro_add = $pro->add_Product($_POST , $_FILES);
                     <td>
                         <select id="select" name="type">
                             <option>Select Type</option>
+                            <?php 
+                            if($val['type'] == 1){ ?>
+                                <option selected = "selected" value="1">Featured</option>
+                                <option value="2">Non-Featured</option>
+                          <?php }else{ ?>
                             <option value="1">Featured</option>
-                            <option value="2">Non-Featured</option>
+                            <option  selected = "selected" value="2">General</option>
+                            <?php } ?>
                         </select>
                     </td>
                 </tr>
