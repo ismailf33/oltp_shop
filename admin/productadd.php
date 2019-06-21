@@ -8,7 +8,7 @@ $pro = new Product();
 ?>
 <?php
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-$pro_add = $pro->addProduct($_POST , $_FILES);
+$pro_add = $pro->add_Product($_POST , $_FILES);
 }
 ?>
 <div class="grid_10">
