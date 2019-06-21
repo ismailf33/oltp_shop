@@ -1,5 +1,13 @@
-﻿<?php include 'inc/header.php';?>
-<?php include 'inc/sidebar.php';?>
+﻿<?php 
+include 'inc/header.php';
+include 'inc/sidebar.php';
+include '../helpers/Format.php';
+include '../classes/Product.php';
+?>
+<?php
+$fm = new Format();
+$pr = new Product();
+?>
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Post List</h2>
@@ -7,21 +15,33 @@
             <table class="data display datatable" id="example">
 			<thead>
 				<tr>
-					<th>Post Title</th>
-					<th>Description</th>
+					<th>Sl No</th>
+					<th>Product name</th>
 					<th>Category</th>
+					<th>Brand</th>
+					<th>Description</th>
+					<th>Price</th>
 					<th>Image</th>
-					<th>Action</th>
+					<th>Type</th>
+					<th>Aciton</th>
 				</tr>
 			</thead>
 			<tbody>
+			<?php
+			$pr_list = $pd->product_list();
+			if($pr_list){
+				while($print = $pr_list->fetch_assoc()){ ?>
 				<tr class="odd gradeX">
-					<td>Trident</td>
-					<td>Internet Explorer 4.0</td>
-					<td>Win 95+</td>
-					<td class="center"> 4</td>
-					<td><a href="">Edit</a> || <a href="">Delete</a></td>
-				</tr>				
+					<td><?php echo $print['productName']?></td>
+					<td><?php echo $print['catName']?></td>
+					<td><?php echo $print['brandName']?></td>
+					<td><?php echo $print['body']?></td>
+					<td><?php echo $print['price']?></td>
+					<td><?php echo $print['image']?></td>
+					<td><?php echo $print['type']?></td>
+					<td><a href="<?php echo $print['productId']?>">Edit</a> || <a href="<?php echo $print['productId']?>">Delete</a></td>
+				</tr>
+			<?php }} ?>				
 			</tbody>
 		</table>
 
