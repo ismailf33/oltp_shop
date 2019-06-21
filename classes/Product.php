@@ -58,7 +58,9 @@ else{
     }
 }
 public function product_list(){
-$query
+$query = "SELECT * FROM tbl_product ORDER BY productId DESC";
+$result = $this->db->select($query);
+return $result;
 }
 //end brackets  
 }

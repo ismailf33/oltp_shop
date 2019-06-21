@@ -28,16 +28,16 @@ $pr = new Product();
 			</thead>
 			<tbody>
 			<?php
-			$pr_list = $pd->product_list();
+			$pr_list = $pr->product_list();
 			if($pr_list){
 				while($print = $pr_list->fetch_assoc()){ ?>
 				<tr class="odd gradeX">
 					<td><?php echo $print['productName']?></td>
 					<td><?php echo $print['catName']?></td>
 					<td><?php echo $print['brandName']?></td>
-					<td><?php echo $print['body']?></td>
+					<td><?php echo $fm->validation($print['body'])?></td>
 					<td><?php echo $print['price']?></td>
-					<td><?php echo $print['image']?></td>
+					<td><img src="<?php echo $print['image']?>" height="40px" width="40px"></td>
 					<td><?php echo $print['type']?></td>
 					<td><a href="<?php echo $print['productId']?>">Edit</a> || <a href="<?php echo $print['productId']?>">Delete</a></td>
 				</tr>
