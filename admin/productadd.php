@@ -3,8 +3,14 @@
 <?php 
 include '../classes/Brand.php';
 include '../classes/Category.php';
+include '../classes/Product.php';
+$pro = new Product();
 ?>
-
+<?php
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+$pro_add = $pro->addProduct($_POST , $_FILES);
+}
+?>
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Add New Product</h2>
