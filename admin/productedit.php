@@ -97,7 +97,9 @@ $pro_add = $pro->add_Product($_POST , $_FILES);
                     <td>
                         <label>Upload Image</label>
                     </td>
-                    <td>                   
+                    <td>
+                    <img src="<?php echo $val['image']?>" height="40px" width="40px">
+                    <br>                   
                         <input type="file" name="image" />
                     </td>
                 </tr>
