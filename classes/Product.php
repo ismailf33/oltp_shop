@@ -23,7 +23,7 @@ $brandId = mysqli_real_escape_string($this->db->link , $brandId);
 $body = mysqli_real_escape_string($this->db->link , $body);
 $price = mysqli_real_escape_string($this->db->link , $price);
 $type = mysqli_real_escape_string($this->db->link , $type);
-//image validation
+//image validation(http://www.trainingwithliveproject.com/2016/04/upload-image-with-validation-php-oop-bangla.html)
 $permited  = array('jpg', 'jpeg', 'png', 'gif');
 $file_name = $_file['image']['name'];
 $file_size = $_file['image']['size'];
