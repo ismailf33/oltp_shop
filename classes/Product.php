@@ -96,5 +96,10 @@ public function del_product($id){
         return $msg;
     }
 } 
+public function get_product($id){
+    $query = "SELECT * FROM tbl_product WHERE productId='$id'";
+    $value = $this->db->select($query);
+    return $value;
+}
 //end brackets  
 }
