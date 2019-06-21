@@ -57,7 +57,7 @@ if(isset($_GET['proid'])){
 						echo "Featured";
 						}else{
 							echo "General";}?></td>
-					<td><a href="<?php echo $print['productId']?>">Edit</a> || <a href="?proid = <?php echo $print['productId']?>">Delete</a></td>
+					<td><a href="<?php echo $print['productId']?>">Edit</a> || <a href="?proid=<?php echo $print['productId']?>">Delete</a></td>
 				</tr>
 			<?php }} ?>				
 			</tbody>
