@@ -10,8 +10,8 @@ $pro = new Product();
 if(isset($_GET['proid'])){
     $id = $_GET['proid'];
 }
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-$pro_add = $pro->add_Product($_POST , $_FILES);
+if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
+$pro_up = $pro->update_Product($_POST , $_FILES ,$id);
 }
 ?>
 <div class="grid_10">
@@ -134,7 +134,7 @@ $pro_add = $pro->add_Product($_POST , $_FILES);
 				<tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Save" />
+                        <input type="submit" name="submit" Value="update" />
                     </td>
                 </tr>
             </table>
