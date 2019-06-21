@@ -49,7 +49,7 @@ if(isset($_GET['proid'])){
 					<td><?php echo $print['productName']?></td>
 					<td><?php echo $print['catName']?></td>
 					<td><?php echo $print['brandName']?></td>
-					<td><?php echo $fm->textShorten($print['body'])?></td>
+					<td><?php echo $fm->textShorten($print['body'],30)?></td>
 					<td><?php echo $print['price']?></td>
 					<td><img src="<?php echo $print['image']?>" height="40px" width="40px"></td>
 					<td><?php 
