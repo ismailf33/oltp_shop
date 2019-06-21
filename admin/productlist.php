@@ -30,15 +30,21 @@ $pr = new Product();
 			<?php
 			$pr_list = $pr->product_list();
 			if($pr_list){
-				while($print = $pr_list->fetch_assoc()){ ?>
+				$i=0;
+				while($print = $pr_list->fetch_assoc()){
+					$i++; ?>
+				
 				<tr class="odd gradeX">
+					<td><?php echo $i;?></td>
 					<td><?php echo $print['productName']?></td>
 					<td><?php echo $print['catName']?></td>
 					<td><?php echo $print['brandName']?></td>
-					<td><?php echo $fm->validation($print['body'])?></td>
+					<td><?php echo $fm->textShorten($print['body'])?></td>
 					<td><?php echo $print['price']?></td>
 					<td><img src="<?php echo $print['image']?>" height="40px" width="40px"></td>
-					<td><?php echo $print['type']?></td>
+					<td><?php 
+					if($print['type']==0){
+						echo "Featured"}?></td>
 					<td><a href="<?php echo $print['productId']?>">Edit</a> || <a href="<?php echo $print['productId']?>">Delete</a></td>
 				</tr>
 			<?php }} ?>				
