@@ -36,7 +36,14 @@ $uploaded_image = "upload/".$unique_image;
 if($productName == "" || $catId == "" || $brandId == "" || $body == "" || $price == "" || $type == "" ){
     $msg = "<span class='error'>Field must not be empty !</span>";
     return $msg;
-}
+}elseif ($file_size >1048567) {
+    $msg =  "<span class='error'>Image Size should be less then 1MB! </span>";
+    return $msg;
+   } elseif (in_array($file_ext, $permited) === false) {
+    $msg = "<span class='error'>You can upload only:-"
+    .implode(', ', $permited)." file .</span>";
+    return $msg;
+   }
 else{
     move_uploaded_file($file_temp, $uploaded_image);
     $query  = "INSERT INTO tbl_product(productName ,catId ,brandId, body, price, image, type) Values('$productName','$catId','$brandId','$body','$price','$uploaded_image' ,'$type')";
