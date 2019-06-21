@@ -18,8 +18,8 @@ public function adminLogin($adminuser,$adminpass){
 $adminuser = mysqli_real_escape_string($this->db->link , $adminuser);
 $adminpass = mysqli_real_escape_string($this->db->link , $adminpass);
 if(empty($adminuser) || empty($adminuser)){
-    $loginmsg = "Username or password must not be empty";
-    return $loginmsg;
+    $msg = "<span class='error'>Username or password must not be empty !<span>";
+    return $msg;
 }else{
     $query  = "SELECT * FROM tbl_admin WHERE adminuser = '$adminuser' AND adminpass = '$adminpass'";
     $result = $this->db->select($query);
@@ -31,8 +31,8 @@ if(empty($adminuser) || empty($adminuser)){
      Session::set("adminName" , $value['adminName']);
      header("Location:dashbord.php");       
     }else{
-        $loginmsg = "Username or password not match";
-        return $loginmsg;
+        $msg =  "<span class='error'>Username or password not match !<span>";
+        return $msg;
     }
 }
 }

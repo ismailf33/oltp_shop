@@ -22,15 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		<form action="" method="post">
 			<h1>Admin Login</h1>
 <?php
-if (isset($loginmsg)) {
-	echo $loginmsg;
+if (isset($p_info)) {
+	echo $p_info;
 }
 ?>
 			<div>
-				<input type="text" placeholder="Username" required="" name="adminUser"/>
+				<input type="text" placeholder="Username"  name="adminUser"/>
 			</div>
 			<div>
-				<input type="password" placeholder="Password" required="" name="adminPass"/>
+				<input type="password" placeholder="Password"  name="adminPass"/>
 			</div>
 			<div>
 				<input type="submit" value="Log in" />
