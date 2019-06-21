@@ -120,7 +120,7 @@ $pro_add = $pro->add_Product($_POST , $_FILES);
                         <select id="select" name="type">
                             <option>Select Type</option>
                             <?php 
-                            if($val['type'] == 1){ ?>
+                            if($val['type'] == 0){ ?>
                                 <option selected = "selected" value="1">Featured</option>
                                 <option value="2">Non-Featured</option>
                           <?php }else{ ?>

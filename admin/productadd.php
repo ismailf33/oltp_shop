@@ -101,8 +101,8 @@ $pro_add = $pro->add_Product($_POST , $_FILES);
                     <td>
                         <select id="select" name="type">
                             <option>Select Type</option>
-                            <option value="1">Featured</option>
-                            <option value="2">Non-Featured</option>
+                            <option value="0">Featured</option>
+                            <option value="1">General</option>
                         </select>
                     </td>
                 </tr>
