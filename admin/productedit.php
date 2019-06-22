@@ -16,11 +16,11 @@ $pro_up = $pro->update_Product($_POST , $_FILES ,$id);
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Add New Product</h2>
+        <h2>Update Product</h2>        
         <div class="block"> 
             <?php
-            if(isset($pro_add)){
-                echo $pro_add;
+            if(isset($pro_up)){
+                echo $pro_up;
             }
             ?> 
             <?php           
@@ -122,10 +122,10 @@ $pro_up = $pro->update_Product($_POST , $_FILES ,$id);
                             <?php 
                             if($val['type'] == 0){ ?>
                                 <option selected = "selected" value="1">Featured</option>
-                                <option value="2">Non-Featured</option>
+                                <option value="2">General</option>
                           <?php }else{ ?>
-                            <option value="1">Featured</option>
-                            <option  selected = "selected" value="2">General</option>
+                            <option value="0">Featured</option>
+                            <option  selected = "selected" value="1">General</option>
                             <?php } ?>
                         </select>
                     </td>
