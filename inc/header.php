@@ -1,6 +1,11 @@
 <?php
 include "lib/Session.php";
 Session::init();
+include "lib/Database.php";
+include "helpers/Format.php";
+
+$db = new Database();
+$fm = new Format();
 ?>
 <?php
   header("Cache-Control: no-cache, must-revalidate");
