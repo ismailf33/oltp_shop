@@ -4,8 +4,15 @@ Session::init();
 include "lib/Database.php";
 include "helpers/Format.php";
 
+spl_autoload_register(function($class){
+	include_once "classes/".$class.".php";
+});
+
 $db = new Database();
 $fm = new Format();
+//instanc by spl_autoloader
+$pd = new Product();
+$fm = new Category();
 ?>
 <?php
   header("Cache-Control: no-cache, must-revalidate");
