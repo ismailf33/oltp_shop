@@ -32,34 +32,21 @@ include "inc/slider.php";
     		<div class="clear"></div>
     	</div>
 			<div class="section group">
-				<div class="grid_1_of_4 images_1_of_4">
-					 <a href="preview.html"><img src="images/new-pic1.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p><span class="price">$403.66</span></p>
-				     <div class="button"><span><a href="preview.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="preview.html"><img src="images/new-pic2.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p><span class="price">$621.75</span></p> 
-				     <div class="button"><span><a href="preview.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-					<a href="preview.html"><img src="images/feature-pic2.jpg" alt="" /></a>
-					 <h2>Lorem Ipsum is simply </h2>
-					 <p><span class="price">$428.02</span></p>
-				     <div class="button"><span><a href="preview.php" class="details">Details</a></span></div>
-				</div>
-				<div class="grid_1_of_4 images_1_of_4">
-				 <img src="images/new-pic3.jpg" alt="" />
-					 <h2>Lorem Ipsum is simply </h2>					 
-					 <p><span class="price">$457.88</span></p>
 
+			<?php
+		      $get_fea = $pd->get_new_product();
+			if($get_fea){
+				while($value = $get_fea->fetch_assoc()){ ?>
+				<div class="grid_1_of_4 images_1_of_4">
+					<a href="preview.php"><img src="admin/<?php echo $value['image'] ;?>" alt="" /></a>
+					 <h2><?php echo $value['productName'] ;?></h2>
+					 <p><?php echo $fm->textShorten($value['body'], 50) ;?></p>
 				     <div class="button"><span><a href="preview.php" class="details">Details</a></span></div>
 				</div>
+			<?php }}?>					
 			</div>
-    </div>
- </div>
+    		</div>
+ 	</div>
 </div>
 <?php
 include "inc/footer.php";
