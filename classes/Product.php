@@ -1,4 +1,5 @@
 <?php
+
 include_once "../lib/Database.php";
 include_once "../helpers/Format.php";
 
