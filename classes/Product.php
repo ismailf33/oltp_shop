@@ -186,6 +186,10 @@ public function get_feature_product(){
     $value = $this->db->select($query);
     return $value;
 }
+public function get_new_product(){
+    $query = "SELECT * FROM tbl_product ORDER BY productId DESC LIMIT 4 ";
+    $value = $this->db->select($query);
+    return $value;
 
-    //end brackets  
+}    //end brackets  
 }
