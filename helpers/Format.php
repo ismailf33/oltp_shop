@@ -8,6 +8,8 @@ class Format{
 	}
 
 	public function textShorten($text, $limit){
+		$text = html_entity_decode($text);
+		$text = strip_tags($text);
 		$text = $text. " ";
 		$text = substr($text, 0, $limit);
 		$text = substr($text, 0, strrpos($text, ' '));
