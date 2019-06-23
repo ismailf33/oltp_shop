@@ -1,8 +1,9 @@
 <?php
-include "lib/Session.php";
+$filepath = realpath(dirname(__FILE__));
+include_once ($filepath.'/../lib/Session.php');
 Session::init();
-include "lib/Database.php";
-include "helpers/Format.php";
+include_once ($filepath.'/../lib/Database.php');
+include_once ($filepath.'/../helpers/Format.php');
 
 spl_autoload_register(function($class){
 	include_once "classes/".$class.".php";
@@ -12,7 +13,7 @@ $db = new Database();
 $fm = new Format();
 //instanc by spl_autoloader
 $pd = new Product();
-$fm = new Cart();
+$cd = new Cart();
 ?>
 <?php
   header("Cache-Control: no-cache, must-revalidate");
