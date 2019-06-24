@@ -202,7 +202,7 @@ INNER JOIN tbl_brand
 ON tbl_product.brandId = tbl_brand.brandId
 ORDER BY tbl_product.productId DESC";
 */
-        //Alliasis(Banglai_Uponam)
+//Alliasis(Banglai_Uponam)
 $query = "SELECT p.* ,c.catName, b.brandName
 FROM tbl_product as p, tbl_category as c,tbl_brand as b
 WHERE p.catId = c.catId AND p.brandId = b.brandId 
