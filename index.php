@@ -21,7 +21,7 @@ include "inc/slider.php";
 					 <h2><?php echo $print['productName'] ;?></h2>
 					 <p><?php echo $fm->textShorten($print['body'], 50) ;?></p>
 					 <p><span class="price"><?php echo $print['price'] ;?></span></p>
-				     <div class="button"><span><a href="preview.php" class="details">Details</a></span></div>
+				     <div class="button"><span><a href="preview.php?proid=<?php echo $print['productId'] ;?>" class="details">Details</a></span></div>
 				</div>
 				<?php	}}?>								
 			</div>
@@ -41,7 +41,7 @@ include "inc/slider.php";
 					<a href="preview.php"><img src="admin/<?php echo $value['image'] ;?>" alt="" /></a>
 					 <h2><?php echo $value['productName'] ;?></h2>
 					 <p><?php echo $fm->textShorten($value['body'], 50) ;?></p>
-				     <div class="button"><span><a href="preview.php" class="details">Details</a></span></div>
+					 <div class="button"><span><a href="preview.php?proid=<?php echo $value['productId'] ;?>" class="details">Details</a></span></div>
 				</div>
 			<?php }}?>					
 			</div>

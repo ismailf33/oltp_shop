@@ -63,7 +63,7 @@ $cd = new Cart();
 							</a>
 						</div>
 			      </div>
-		   <div class="login"><a href="login.html">Login</a></div>
+		   <div class="login"><a href="login.php">Login</a></div>
 		 <div class="clear"></div>
 	 </div>
 	 <div class="clear"></div>
