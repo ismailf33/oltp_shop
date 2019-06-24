@@ -35,6 +35,10 @@ class Format{
 		}
 		return $title = ucfirst($title);
 	}
+	public function htmlless($data){
+		$data = html_entity_decode($data);
+		return $data;
+	}
 
 }
 ?>

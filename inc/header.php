@@ -13,7 +13,7 @@ $db = new Database();
 $fm = new Format();
 //instanc by spl_autoloader
 $pd = new Product();
-$cd = new Cart();
+$ct = new Cart();
 ?>
 <?php
   header("Cache-Control: no-cache, must-revalidate");

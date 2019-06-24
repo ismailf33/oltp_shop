@@ -9,13 +9,13 @@ if(! isset($_GET['proid']) || $_GET['proid'] == NULL){
 	$id = $_GET['proid'];
 }
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
-$pro_up = $pro->update_Product($_POST , $_FILES ,$id);
+$quantity = $_POST['quantity'];
+$addCart = $ct->add_cart($quantity ,$id);
 }
 ?>
  <div class="main">
     <div class="content">
     	<div class="section group">
-
 	<?php
 	$eachid = $pd->each_item($id);
 	if($eachid){
@@ -32,18 +32,16 @@ $pro_up = $pro->update_Product($_POST , $_FILES ,$id);
 						<p>Brand:<span><?php echo $value['brandName']?></span></p>
 					</div>
 				<div class="add-cart">
-					<form action="cart.html" method="post">
-						<input type="number" class="buyfield" name="" value="1"/>
+					<form action="" method="post">
+						<input type="number" class="buyfield" name="quantity" value="1"/>
 						<input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
 					</form>				
 				</div>
 			</div>
 			<div class="product-desc">
 			<h2>Product Details</h2>
-			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-	        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-	    </div>
-				
+			<p><span><?php echo $fm->htmlless($value['body'])?></p>
+	    </div>				
 	</div>
 	<?php	}} ?>
 				<div class="rightsidebar span_3_of_1">
