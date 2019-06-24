@@ -25,8 +25,7 @@ $pro_up = $pro->update_Product($_POST , $_FILES ,$id);
 						<img src="admin/<?php echo $value['image']?>" alt="" />
 					</div>
 				<div class="desc span_3_of_2">
-					<h2><?php echo $value['productName']?></h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>					
+					<h2><?php echo $value['productName']?></h2>					
 					<div class="price">
 						<p>Price: <span>$<?php echo $value['price']?></span></p>
 						<p>Category: <span><?php echo $value['catName']?></span></p>
