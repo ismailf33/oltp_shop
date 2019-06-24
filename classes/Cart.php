@@ -2,7 +2,7 @@
 $filepath = realpath(dirname(__FILE__));
 include_once ($filepath.'/../lib/Database.php');
 include_once ($filepath.'/../helpers/Format.php');
-ob_start();
+ob_start(); /*it is working as a personal assistant who sent just important message */
 class Cart{
 private $db;
 private $fm;
