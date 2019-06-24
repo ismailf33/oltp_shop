@@ -206,7 +206,7 @@ ORDER BY tbl_product.productId DESC";
 $query = "SELECT p.* ,c.catName, b.brandName
 FROM tbl_product as p, tbl_category as c,tbl_brand as b
 WHERE p.catId = c.catId AND p.brandId = b.brandId 
-
+/***condition for each product data***/AND p.productId ='$id'
 ORDER BY p.productId DESC ";
         $result = $this->db->select($query);
         return $result;
