@@ -28,6 +28,9 @@ $quan_pass = $ct->up_item_quantity($cartId,$quantity);
 	echo $quan_pass;
 	}	
 	?>
+		<?php
+		$get_product = $ct->getcartproduct();
+		if($get_product){ ?>
 			<table class="tblone">
 				<tr>
 					<th width="5%">Sl</th>
@@ -38,14 +41,12 @@ $quan_pass = $ct->up_item_quantity($cartId,$quantity);
 					<th width="15%">Total Price</th>
 					<th width="10%">Action</th>
 				</tr>
-			<?php
-			$get_product = $ct->getcartproduct();
-			if($get_product){
-			$sum = 0;	
-			$i=0;
-			while($value = $get_product->fetch_assoc()){ 
-			$i++;
-			?>
+		<?php
+		$sum = 0;	
+		$i=0;
+		while($value = $get_product->fetch_assoc()){ 
+		$i++;
+		?>
 				<tr>
 					<td><?php echo $i; ?></td>
 					<td><?php echo $value['productName']; ?></td>
@@ -65,7 +66,7 @@ $quan_pass = $ct->up_item_quantity($cartId,$quantity);
 				</tr>
 			<?php $sum = $sum + $total;
 			Session::set("sum", $sum) ?>		
-			<?php }	 } ?>																	
+			<?php }	?> 																
 			</table>
 			<table style="float:right;text-align:left;" width="40%">
 				<tr>
@@ -85,6 +86,9 @@ $quan_pass = $ct->up_item_quantity($cartId,$quantity);
 					?></td>
 				</tr>
 			</table>
+			<?php }else{ ?>
+			<h2 style="text-align:center; width:100%; padding:100px 0px; color:red;">Cart can,t found !</h2>
+			<?php }?>			
 		</div>
 		<div class="shopping">
 			<div class="shopleft">

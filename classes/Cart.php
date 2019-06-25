@@ -85,9 +85,10 @@ if($result){
 }else{
        $msg = "<span class='success'>Cart item not updated !</span>";
        return $msg;
+              }
+      }
 }
-}
-}
+
 //end brackets
 }
 ?>

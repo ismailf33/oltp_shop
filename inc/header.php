@@ -67,10 +67,15 @@ color:red;
 					<div class="cart">
 						<a href="#" title="View my shopping cart" rel="nofollow">
 								<span class="cart_title">Cart</span>
-								<span class="no_product"><?php
-								$sum = Session::get("sum");
-								echo "$".$sum;
-								?></span>
+								<span class="no_product">
+							<?php
+							$get_data = $ct->getcartproduct();
+							if($get_data){
+							$sum = Session::get("sum");
+							echo "$".$sum; }else{
+							echo "empty";	
+							}							
+							?></span>
 							</a>
 						</div>
 			      </div>
