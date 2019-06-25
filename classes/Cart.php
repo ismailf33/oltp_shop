@@ -32,6 +32,7 @@ $result =  $this->db->insert($query);
                // echo "<script>window.location = '404.php';</script>";
         }
 }
+
 //end brackets
 }
 ?>
