@@ -63,11 +63,13 @@ public function del_cart_item($id){
               return $msg;
        }
 }
-public function up_item_quantity($quantity,$id){
+public function up_item_quantity($cartId,$quantity){
+$cartId = $this->fm->validation($cartId);       
 $quantity = $this->fm->validation($quantity);
 //mysqli_part
+$cartId = mysqli_real_escape_string($this->db->link , $cartId);
 $quantity = mysqli_real_escape_string($this->db->link , $quantity);
-$id = mysqli_real_escape_string($this->db->link , $id);
+
 if($quantity<=0){
        $msg = "<span class='error'>please input valid quantity number ! </span>";
        return $msg;  
@@ -75,7 +77,7 @@ if($quantity<=0){
    $query = "UPDATE tbl_cart
    SET
    quantity ='$quantity'
-   WHERE cartId='$id' ";
+   WHERE cartId='$cartId' ";
   $result = $this->db->update($query);
 if($result){
        $msg = "<span class='success'>Cart item Updated successfully !</span>";

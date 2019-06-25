@@ -7,8 +7,9 @@ $id = $_GET['delid'];
 $del_cart = $ct->del_cart_item($id);
 }
 if($_SERVER['REQUEST_METHOD']=='POST'){
+$cartId = $_POST['cartId'];
 $quantity = $_POST['quantity'];
-$quan_pass = $ct->up_item_quantity($quantity,$id);
+$quan_pass = $ct->up_item_quantity($cartId,$quantity);
 }
 ?>
 	
@@ -20,6 +21,11 @@ $quan_pass = $ct->up_item_quantity($quantity,$id);
 	<?php
 	if(isset($del_cart)){
 	echo $del_cart;
+	}	
+	?>
+	<?php
+	if(isset($quan_pass)){
+	echo $quan_pass;
 	}	
 	?>
 			<table class="tblone">
@@ -47,6 +53,7 @@ $quan_pass = $ct->up_item_quantity($quantity,$id);
 					<td>$<?php echo $value['price']; ?></td>
 					<td>
 					<form action="" method="post">
+						<input type="hidden" name="cartId" value="<?php echo $value['cartId'];?>"/>
 						<input type="number" name="quantity" value="<?php echo $value['quantity'];?>"/>
 						<input type="submit" name="submit" value="Update"/>
 					</form>
