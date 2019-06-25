@@ -63,7 +63,8 @@ $quan_pass = $ct->up_item_quantity($cartId,$quantity);
 						?></td>
 					<td><a href="?delid=<?php echo $value['cartId'];?>">X</a></td>
 				</tr>
-			<?php $sum = $sum + $total; ?>		
+			<?php $sum = $sum + $total;
+			Session::set("sum", $sum) ?>		
 			<?php }	 } ?>																	
 			</table>
 			<table style="float:right;text-align:left;" width="40%">
