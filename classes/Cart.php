@@ -80,8 +80,7 @@ if($quantity<=0){
    WHERE cartId='$cartId' ";
   $result = $this->db->update($query);
 if($result){
-       $msg = "<span class='success'>Cart item Updated successfully !</span>";
-       return $msg;
+       header('Location: cart.php');
 }else{
        $msg = "<span class='success'>Cart item not updated !</span>";
        return $msg;
