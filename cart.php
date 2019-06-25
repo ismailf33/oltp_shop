@@ -8,7 +8,7 @@ include "inc/header.php";
 		<h2>Your Cart</h2>
 			<table class="tblone">
 				<tr>
-					<th width="5%">Sl No</th>
+					<th width="5%">Sl</th>
 					<th width="30%">Product Name</th>
 					<th width="10%">Image</th>
 					<th width="15%">Price</th>
@@ -16,34 +16,49 @@ include "inc/header.php";
 					<th width="15%">Total Price</th>
 					<th width="10%">Action</th>
 				</tr>
+			<?php
+			$get_product = $ct->getcartproduct();
+			if($get_product){
+			$sum = 0;	
+			$i=0;
+			while($value = $get_product->fetch_assoc()){ 
+			$i++;
+			?>
 				<tr>
-					<td>Product Sl</td>
-					<td>Product Title</td>
-					<td><img src="images/new-pic3.jpg" alt=""/></td>
-					<td>Tk. 20000</td>
+					<td><?php echo $i; ?></td>
+					<td><?php echo $value['productName']; ?></td>
+					<td> <img src="admin/<?php echo $value['image']; ?>" alt=""/></td>
+					<td>$<?php echo $value['price']; ?></td>
 					<td>
-						<form action="" method="post">
-							<input type="number" name="" value="1"/>
-							<input type="submit" name="submit" value="Update"/>
-						</form>
+					<form action="" method="post">
+						<input type="number" name="" value="<?php echo $value['quantity'];?>"/>
+						<input type="submit" name="submit" value="Update"/>
+					</form>
 					</td>
-					<td>Tk. 40000</td>
-					<td><a href="">X</a></td>
-				</tr>														
-							
+					<td>$<?php $total = $value['price']*$value['quantity'];
+						echo $total;
+						?></td>
+					<td><a href="<?php echo $value['productId']; ?>">X</a></td>
+				</tr>
+			<?php $sum = $sum + $total; ?>		
+			<?php }	 } ?>																	
 			</table>
 			<table style="float:right;text-align:left;" width="40%">
 				<tr>
 					<th>Sub Total : </th>
-					<td>TK. 210000</td>
+					<td>$<?php echo $sum ;?></td>
 				</tr>
 				<tr>
 					<th>VAT : </th>
-					<td>TK. 31500</td>
+					<td>10%</td>
 				</tr>
 				<tr>
 					<th>Grand Total :</th>
-					<td>TK. 241500 </td>
+					<td><?php
+					$vat = $sum * 0.1;
+					$grand_total = $sum+$vat;
+					echo $grand_total;
+					?></td>
 				</tr>
 			</table>
 		</div>

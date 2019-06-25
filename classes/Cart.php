@@ -32,7 +32,12 @@ $result =  $this->db->insert($query);
                // echo "<script>window.location = '404.php';</script>";
         }
 }
-
+public function getcartproduct(){
+       $sId = session_id();
+       $query = "SELECT * FROM  tbl_cart WHERE sId='$sId' ";
+       $result = $this->db->select($query);
+       return $result;
+       }
 //end brackets
 }
 ?>
