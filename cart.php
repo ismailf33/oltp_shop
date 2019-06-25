@@ -1,11 +1,27 @@
 <?php
 include "inc/header.php";
 ?>
+<?php
+if(isset($_GET['delid'])){
+$id = $_GET['delid'];
+$del_cart = $ct->del_cart_item($id);
+}
+if($_SERVER['REQUEST_METHOD']=='POST'){
+$quantity = $_POST['quantity'];
+$quan_pass = $ct->up_item_quantity($quantity,$id);
+}
+?>
+	
  <div class="main">
     <div class="content">
     	<div class="cartoption">		
 	 <div class="cartpage">
 		<h2>Your Cart</h2>
+	<?php
+	if(isset($del_cart)){
+	echo $del_cart;
+	}	
+	?>
 			<table class="tblone">
 				<tr>
 					<th width="5%">Sl</th>
@@ -31,14 +47,14 @@ include "inc/header.php";
 					<td>$<?php echo $value['price']; ?></td>
 					<td>
 					<form action="" method="post">
-						<input type="number" name="" value="<?php echo $value['quantity'];?>"/>
+						<input type="number" name="quantity" value="<?php echo $value['quantity'];?>"/>
 						<input type="submit" name="submit" value="Update"/>
 					</form>
 					</td>
 					<td>$<?php $total = $value['price']*$value['quantity'];
 						echo $total;
 						?></td>
-					<td><a href="<?php echo $value['productId']; ?>">X</a></td>
+					<td><a href="?delid=<?php echo $value['cartId'];?>">X</a></td>
 				</tr>
 			<?php $sum = $sum + $total; ?>		
 			<?php }	 } ?>																	

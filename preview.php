@@ -15,6 +15,11 @@ $addCart = $ct->add_cart($quantity ,$id);
 ?>
  <div class="main">
     <div class="content">
+	<?php
+	if(isset($addCart)){
+		echo $addCart;
+	}?>
+
     	<div class="section group">
 	<?php
 	$eachid = $pd->each_item($id);

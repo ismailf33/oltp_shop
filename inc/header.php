@@ -42,6 +42,14 @@ $ct = new Cart();
     $('#dc_mega-menu-orange').dcMegaMenu({rowItems:'4',speed:'fast',effect:'fade'});
   });
 </script>
+<style>
+.success{
+color:green;
+}
+.error{
+color:red;
+}
+</style>
 </head>
 <body>
   <div class="wrap">
