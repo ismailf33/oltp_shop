@@ -51,12 +51,14 @@ $addCart = $ct->add_cart($quantity ,$id);
 	<?php	}} ?>
 				<div class="rightsidebar span_3_of_1">
 					<h2>CATEGORIES</h2>
-				<>
-
+		<?php
+		$cat_list = $cat->Category_list();
+		if($cat_list){
+		while($value =$cat_list->fetch_assoc()){ ?>
 				<ul>
-					<li><a href="productbycat.php">Mobile Phones</a></li>					
+					<li><a href="productbycat.php?catid=<?php echo $value['catId'];?>"><?php echo $value['catName'];?></a></li>					
     				</ul>
-    	
+		<?php	}} ?>
  				</div>
  		</div>
  	</div>

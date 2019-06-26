@@ -231,6 +231,10 @@ public function get_forth_brand(){
     $value = $this->db->select($query);
     return $value;
 }     
-    
+public function get_cat_product($id){
+    $query = "SELECT * FROM tbl_product WHERE catId='$id'";
+    $value = $this->db->select($query);
+    return $value;
+}    
   //end brackets  
 }
