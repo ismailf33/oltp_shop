@@ -30,7 +30,7 @@ if(! isset($_GET['catid']) || $_GET['catid'] == NULL){
 		</div>
 	<?php }}else{ ?>
 
-<h2 style="font-size:100px; color:red; padding: 200px 0px;margin: 0 auto;width:50%"> Products of this Category not available ! </h2>
+<h2 style="font-size:40px; color:red; padding: 200px 0px;margin: 0 auto;width:50% ;"> Products of this Category not available ! </h2>
 
 	<?php } ?>		
 	</div>	
