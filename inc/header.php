@@ -12,6 +12,7 @@ spl_autoload_register(function($class){
 $db = new Database();
 $fm = new Format();
 //instanc by spl_autoloader
+$cat = new Category();
 $pd = new Product();
 $ct = new Cart();
 ?>

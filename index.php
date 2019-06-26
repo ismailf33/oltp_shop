@@ -2,7 +2,6 @@
 include "inc/header.php";
 include "inc/slider.php";
 ?>
-
  <div class="main">
     <div class="content">
     	<div class="content_top">
@@ -41,6 +40,7 @@ include "inc/slider.php";
 					<a href="preview.php"><img src="admin/<?php echo $value['image'] ;?>" alt="" /></a>
 					 <h2><?php echo $value['productName'] ;?></h2>
 					 <p><?php echo $fm->textShorten($value['body'], 50) ;?></p>
+					 <p><span class="price"><?php echo $value['price'] ;?></span></p>
 					 <div class="button"><span><a href="preview.php?proid=<?php echo $value['productId'] ;?>" class="details">Details</a></span></div>
 				</div>
 			<?php }}?>					
