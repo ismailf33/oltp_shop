@@ -2,7 +2,7 @@
 include_once "../lib/Database.php";
 include_once "../helpers/Format.php";
 
-class Cart{
+class User{
 private $db;
 private $fm;
 public function __construct(){

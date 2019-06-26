@@ -210,6 +210,27 @@ WHERE p.catId = c.catId AND p.brandId = b.brandId
 ORDER BY p.productId DESC ";
         $result = $this->db->select($query);
         return $result;
-    }       
+    } 
+public function get_first_brand(){
+    $query = "SELECT * FROM tbl_product WHERE brandId='1' ORDER BY brandId DESC LIMIT 1";
+    $value = $this->db->select($query);
+    return $value;
+}
+public function get_second_brand(){
+    $query = "SELECT * FROM tbl_product WHERE brandId='5' ORDER BY brandId DESC LIMIT 1";
+    $value = $this->db->select($query);
+    return $value;
+}  
+public function get_third_brand(){
+    $query = "SELECT * FROM tbl_product WHERE brandId='8' ORDER BY brandId DESC LIMIT 1";
+    $value = $this->db->select($query);
+    return $value;
+}  
+public function get_forth_brand(){
+    $query = "SELECT * FROM tbl_product WHERE brandId='10' ORDER BY brandId DESC LIMIT 1";
+    $value = $this->db->select($query);
+    return $value;
+}     
+    
   //end brackets  
 }
