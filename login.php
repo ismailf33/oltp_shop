@@ -1,5 +1,6 @@
 <?php include "inc/header.php"; ?>
-<?php
+<?php Session::check_cus_Login(); ?>
+<?php 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 $cus_log= $cmr->customerLogin($_POST);
 } ?>   
