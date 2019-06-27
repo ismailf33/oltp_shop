@@ -15,6 +15,7 @@ $fm = new Format();
 $cat = new Category();
 $pd = new Product();
 $ct = new Cart();
+$cmr = new Customer();
 ?>
 <?php
   header("Cache-Control: no-cache, must-revalidate");
