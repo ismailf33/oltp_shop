@@ -76,5 +76,56 @@ public function cus_profile($id){
     $result = $this->db->select($query);
     return $result;
 }
+public function customer_update($post,$id){
+    $name = $this->fm->validation($post['name']);
+    $adress = $this->fm->validation($post['adress']);
+    $city = $this->fm->validation($post['city']);
+    $country = $this->fm->validation($post['country']);
+    $zip = $this->fm->validation($post['zip']);
+    $phone = $this->fm->validation($post['phone']);
+    $email = $this->fm->validation($post['email']);
+    //mysqli validation
+    $name = mysqli_real_escape_string($this->db->link , $name);
+    $adress = mysqli_real_escape_string($this->db->link , $adress);  
+    $city = mysqli_real_escape_string($this->db->link , $city);  
+    $country = mysqli_real_escape_string($this->db->link , $country);  
+    $zip = mysqli_real_escape_string($this->db->link , $zip);  
+    $phone = mysqli_real_escape_string($this->db->link , $phone);
+    $email = mysqli_real_escape_string($this->db->link , $email);  
+    $cquery = "SELECT * FROM tbl_customer WHERE email='$email' ";
+    $cresult = $this->db->select($cquery)->fetch_assoc();
+    if($name == "" || $adress == "" || $city == "" || $country == "" || $zip == "" || $phone == "" || $email == "" ){
+            $msg = "<span class='error'>Field must not be empty !</span>";
+            return $msg;
+        }else{
+            $query  = "UPDATE tbl_customer
+            SET name='$name',
+            adress='$adress',
+            city='$city',
+            country='$country',
+            zip='$zip',
+            phone='$phone',
+            email='$email'            
+            WHERE id=$id ";
+            $result = $this->db->update($query);
+            if($result){
+                $msg = "<span class='success'>Updated Successfully .</span>";
+                return $msg;
+            }else{
+                $msg = "<span class='error'>Updated  Not Successfully  !</span>";
+                return $msg;
+            }
+        } 
+      
+    } 
+
+
+
+
+
+
+
+
+
 //end brackets
 }
