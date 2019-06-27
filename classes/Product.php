@@ -235,6 +235,6 @@ public function get_cat_product($id){
     $query = "SELECT * FROM tbl_product WHERE catId='$id'";
     $value = $this->db->select($query);
     return $value;
-}    
+} 
   //end brackets  
 }
