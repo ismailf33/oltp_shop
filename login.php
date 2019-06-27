@@ -53,25 +53,25 @@ $cus_log= $cmr->customerLogin($_POST);
 		    		<div>
 					<select id="country" name="country">
 						<option value="null">Select a Country</option>         
-						<option value="AF">Afghanistan</option>
-						<option value="AL">Albania</option>
-						<option value="DZ">Algeria</option>
-						<option value="AR">Argentina</option>
-						<option value="AM">Armenia</option>
-						<option value="AW">Aruba</option>
-						<option value="AU">Australia</option>
-						<option value="AT">Austria</option>
-						<option value="AZ">Azerbaijan</option>
-						<option value="BS">Bahamas</option>
-						<option value="BH">Bahrain</option>
-						<option value="BD">Bangladesh</option>
+						<option value="Afghanistan">Afghanistan</option>
+						<option value="Albania">Albania</option>
+						<option value="Algeria">Algeria</option>
+						<option value="Argentina">Argentina</option>
+						<option value="Armenia">Armenia</option>
+						<option value="Aruba">Aruba</option>
+						<option value="Australia">Australia</option>
+						<option value="Austria">Austria</option>
+						<option value="Azerbaijan">Azerbaijan</option>
+						<option value="Bahamas">Bahamas</option>
+						<option value="Bahrain">Bahrain</option>
+						<option value="Bangladesh">Bangladesh</option>
 					</select>
 				 </div>		        	
 				<div>
-					<input type="text" name="phone" value="Phone">
+					<input type="text" name="phone" placeholder="Phone">
 				</div>	  
 				<div>
-					<input type="text" name="password" value="Password">
+					<input type="text" name="password" placeholder="Password">
 				</div>
 		    		</td>
 		    </tr> 

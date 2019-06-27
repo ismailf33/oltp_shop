@@ -71,6 +71,10 @@ if($email =="" || $email ==""){
         return $msg;     
         } 
 }  
-
+public function cus_profile($id){
+    $query = "SELECT * FROM  tbl_customer WHERE id='$id'";
+    $result = $this->db->select($query);
+    return $result;
+}
 //end brackets
 }
