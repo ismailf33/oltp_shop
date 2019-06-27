@@ -66,22 +66,36 @@ color:red;
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
-					<div class="cart">
-						<a href="#" title="View my shopping cart" rel="nofollow">
-								<span class="cart_title">Cart</span>
-								<span class="no_product">
-							<?php
-							$get_data = $ct->getcartproduct();
-							if($get_data){
-							$sum = Session::get("sum");
-							echo "$".$sum; }else{
-							echo "empty";	
-							}							
-							?></span>
-							</a>
-						</div>
+				<div class="cart">
+					<a href="#" title="View my shopping cart" rel="nofollow">
+						<span class="cart_title">Cart</span>
+						<span class="no_product">
+						<?php
+						$get_data = $ct->getcartproduct();
+						if($get_data){
+						$sum = Session::get("sum");
+						echo "$".$sum; }else{
+						echo "empty";	
+						}							
+						?></span>
+					</a>
+				</div>
 			      </div>
-		   <div class="login"><a href="login.php">Login</a></div>
+		<?php
+		if(isset($_GET['cid'])){
+		Session::set("cmrlogin", false);
+		header("location:login.php");	
+		}				
+		?>	
+		<div class="login">
+			<?php
+			$log_acc = Session::get("cmrlogin");
+			if($log_acc == true){ ?>
+				<a href="?cid=<?php Session::get('cmrId')?>">Logout</a>
+			<?php }else{?>				
+			<a href="login.php">Login</a>     
+			<?php } ?>
+		</div> 
 		 <div class="clear"></div>
 	 </div>
 	 <div class="clear"></div>

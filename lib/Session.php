@@ -15,7 +15,7 @@ class Session{
 	 		return false;
 	 	}
 	 }
-
+ //--------For admin------------
 	 public static function checkSession(){
 	 	self::init();
 	 	if (self::get("adminlogin") == false) {
@@ -35,6 +35,18 @@ class Session{
 	 	session_destroy();
 	 	header("Location:dashbord.php");
 	 }
+ //--------For admin------------
+	public static function check_cus_Login(){
+		if (self::get("cmrlogin") == true) {
+		header("Location:order.php");
+		}
+	}
+	/*public static function cus_destroy(){
+		session_destroy();		
+		header("Location:login.php");
+	}*/	
+
+
 }
 
 ?>
