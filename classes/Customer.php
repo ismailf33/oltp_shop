@@ -49,6 +49,28 @@ if($name == "" || $adress == "" || $city == "" || $country == "" || $zip == "" |
         }
     } 
   
-}
+} 
+public function customerLogin($data){
+//mysqli validation
+$email = mysqli_real_escape_string($this->db->link , $data['email']);
+$password = mysqli_real_escape_string($this->db->link , md5($data['password']));
+$query = "SELECT * FROM tbl_customer WHERE email='$email' AND password='$password' ";
+        $chk_result = $this->db->select($query);
+if($email =="" || $email ==""){
+        $msg = "<span class='error'>Field must not be empty !</span>";
+        return $msg;
+}else if($chk_result == true){
+        $value = $chk_result->fetch_assoc();
+        Session::set("cmrlogin" , true);
+        Session::set("cmrId" , $value['id']);
+        Session::set("cmrName" , $value['name']);
+        Session::set("cmrEmail" , $value['email']);
+        header("location:order.php");
+        }else{
+        $msg = "<span class='error'>Email or Password not match !</span>";
+        return $msg;     
+        } 
+}  
+
 //end brackets
 }

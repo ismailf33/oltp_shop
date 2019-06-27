@@ -1,6 +1,6 @@
 <?php include "inc/header.php"; ?>
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_POST['register'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 $cus_log= $cmr->customerLogin($_POST);
 } ?>   
  <div class="main">
@@ -8,14 +8,18 @@ $cus_log= $cmr->customerLogin($_POST);
     	 <div class="login_panel">
         	<h3>Existing Customers</h3>
 		<p>Sign in with the form below.</p>
+
+		<?php if(isset($cus_log)){echo $cus_log;}?>  
 	<!--Login form -->	
-        	<form action="" method="get" id="member">
-			<input name="Domain" type="text"      name="email"       placeholder="Enter your Username.. " class="field">
-			<input name="Domain" type="password"  name="password"    placeholder="Enter your Password.." class="field">
-                 </form>
-                 <p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p>
-                    <div class="buttons"><div><button class="grey" name="register">Sign In</button></div></div>
-		    </div>
+        	<form action="" method="post" id="member">
+			<input name="email" type="text"  name="email"       placeholder="Enter your Username.. " class="field">
+			<input name="password" type="password"  name="password"    placeholder="Enter your Password.." class="field">
+			<p class="note">If you forgot your passoword just enter your email and click <a href="#">here</a></p>
+                <div class="buttons"><div><button class="grey" name="login">Sign In</button></div></div>
+		</form>
+                
+	</div>
+
 		<?php
 		if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 		$cus_reg= $cmr->customerSignup($_POST);
