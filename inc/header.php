@@ -105,8 +105,17 @@ color:red;
 	  <li><a href="index.php">Home</a></li>
 	  <li><a href="products.php">Products</a> </li>
 	  <li><a href="topbrands.php">Top Brands</a></li>
+	<?php 
+	$chk_cart = $ct->getcartproduct();
+	if($chk_cart){ ?>
 	  <li><a href="cart.php">Cart</a></li>
+	<?php } ?>			
 	  <li><a href="contact.php">Contact</a> </li>
+	  <?php
+		$log_acc = Session::get("cmrlogin");		
+		if($log_acc == true){ ?>
+	  <li><a href="profile.php">Profile</a> </li>
+		<?php }	?>
 	  <div class="clear"></div>
 	</ul>
 </div>

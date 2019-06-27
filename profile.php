@@ -17,9 +17,11 @@ header("location:login.php");
 
 }
 </style>
-<div class="main">
-    <h2> Order list </h2>
- </div>
+ <div class="main">
+        <h3>Profile</h3>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, assumenda.</p>
+</div>
+
 <?php
 include "inc/footer.php";
 ?>
