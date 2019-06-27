@@ -83,8 +83,8 @@ color:red;
 			      </div>
 		<?php
 		if(isset($_GET['cid'])){
-		Session::set("cmrlogin", false);
-		header("location:login.php");	
+		$del_cart = $ct->del_cart_data();			
+		Session::cus_destroy();
 		}				
 		?>	
 		<div class="login">

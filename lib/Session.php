@@ -41,10 +41,10 @@ class Session{
 		header("Location:order.php");
 		}
 	}
-	/*public static function cus_destroy(){
+	public static function cus_destroy(){
 		session_destroy();		
 		header("Location:login.php");
-	}*/	
+	}	
 
 
 }
