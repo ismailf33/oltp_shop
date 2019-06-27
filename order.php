@@ -14,7 +14,6 @@ header("location:login.php");
         padding: 200px 0px;
         margin: 0 auto;
         width:50%
-
 }
 </style>
 <div class="main">
